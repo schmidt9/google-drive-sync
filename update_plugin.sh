@@ -5,7 +5,7 @@
 # select vault with plugin here
 mount -t ios . /mnt
 
-cd mnt
+cd /mnt
 
 # cd into mounted vault found by .obsidian directory inside it
 cd "$(find . -type d -name ".obsidian" -print -quit)"
