@@ -2,4 +2,4 @@ Repo for quick testing of https://github.com/schmidt9/Obsidian-Google-Drive amon
 
 Download update script in iSH and run:
 
-wget https://github.com/schmidt9/google-drive-sync/blob/main/update_plugin.sh && chmod +x update_plugin.sh
+wget https://raw.githubusercontent.com/schmidt9/google-drive-sync/refs/heads/main/update_plugin.sh && chmod +x update_plugin.sh
