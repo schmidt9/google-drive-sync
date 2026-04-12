@@ -1,0 +1,1 @@
+Repo for quick testing of https://github.com/schmidt9/Obsidian-Google-Drive
