@@ -3,21 +3,37 @@
 # script for iOS iSH app
 
 # select vault with plugin here
-mount -t ios . /mnt
+mount_dir="mnt"
 
-cd /mnt
+# mount -t ios . $mount_dir
+
+cd $mount_dir
 
 # cd into mounted vault found by .obsidian directory inside it
-cd "$(find . -type d -name ".obsidian" -print -quit)"
+obsidian_path="$(find . -type d -name ".obsidian" -print -quit)"
+
+if [ ! -d "$obsidian_path" ]; then
+  echo "Directory '.obsidian' not found"
+  exit 1
+fi
+
+cd "$obsidian_path"
+
+plugin_path="plugins/google-drive-sync"
 
 # create if not exists
-mkdir -p "plugins"
+mkdir -p "$plugin_path"
 
-cd "plugins"
+cd "$plugin_path"
 
-# (re)download repo 
-rm -rf google-drive-sync
+# (re)download and update files 
+url="https://raw.githubusercontent.com/schmidt9/google-drive-sync/refs/heads/main"
 
-git clone https://github.com/schmidt9/google-drive-sync.git
+files=("manifest.json" "main.js" "styles.css")
 
-echo "repo cloned"
+for file in "${files[@]}"; do
+	# overwrite existing files
+    wget -O $file "$url/$file"
+done
+
+echo "done"
