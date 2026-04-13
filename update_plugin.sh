@@ -29,9 +29,9 @@ cd "$plugin_path"
 # (re)download and update files 
 url="https://raw.githubusercontent.com/schmidt9/google-drive-sync/refs/heads/main"
 
-files=("manifest.json" "main.js" "styles.css")
+files="manifest.json main.js styles.css"
 
-for file in "${files[@]}"; do
+for file in ${files}; do
 	# overwrite existing files
     wget -O $file "$url/$file"
 done
