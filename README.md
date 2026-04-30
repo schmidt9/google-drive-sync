@@ -9,7 +9,14 @@ wget https://raw.githubusercontent.com/schmidt9/google-drive-sync/refs/heads/mai
 wget https://raw.githubusercontent.com/schmidt9/google-drive-sync/refs/heads/main/mount_cd_obsidian_dir.sh && chmod +x mount_cd_obsidian_dir.sh
 ```
 - Run main script `update_plugin.sh` to mount vault and update plugin
-- Also you can run helper script `mount_cd_obsidian_dir.sh` separately just to mount vault and cd into its `.obsidian` directory
+- Also you can run helper script `mount_cd_obsidian_dir.sh` separately just to mount vault and cd into `google-drive-sync` directory in terminal with command
+  ```
+  . mount_cd_obsidian_dir.sh
+  ```
+  or 
+  ```
+  source mount_cd_obsidian_dir.sh
+  ```
 
 # Workarounds
 

@@ -18,3 +18,10 @@ if [ ! -d "$obsidian_path" ]; then
 fi
 
 cd "$obsidian_path"
+
+plugin_path="plugins/google-drive-sync"
+
+# create if not exists
+mkdir -p "$plugin_path"
+
+cd "$plugin_path"
